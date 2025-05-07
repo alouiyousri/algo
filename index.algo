@@ -1,0 +1,33 @@
+ALGORITHM checkpointalgo
+VAR
+    str : STRING
+    charcount : INTEGER = 0
+    wordcount : INTEGER = 1
+    vowelcount : INTEGER = 0
+    vowels : STRING = "aeiou"
+
+BEGIN
+    //input
+    writeln("Enter a string: ")
+    readln(str)
+    FOR (int i = 0; i < str.lenght(); i++) Do 
+    //count characters
+        IF (str[i] != ".") THEN
+            charcount = charcount + 1
+        END_IF
+    //count words
+        IF (str[i] == " ") THEN
+            wordcount = wordcount + 1
+        END_IF
+    //count vowels
+        FOR (int j = 0; j < vowels.lenght(); j++) Do
+            IF (str[i] == vowels[j]) THEN
+                vowelcount = vowelcount + 1
+            END_IF
+        END_FOR
+    END_FOR
+    //output
+    writeln("Lenght of the string is: ", charcount)
+    writeln("Number of words in the string is: ", wordcount)
+    writeln("Number of vowels in the string is: ", vowelcount)
+ENDALGORITHM
